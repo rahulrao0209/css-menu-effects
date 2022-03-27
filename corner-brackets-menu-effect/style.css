@@ -1,0 +1,90 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #faf9f6;
+}
+body ul {
+  display: flex;
+  flex-flow: column nowrap;
+}
+@media screen and (min-width: 830px) {
+  body ul {
+    flex-flow: row wrap;
+  }
+}
+body ul li {
+  list-style-type: none;
+}
+body ul li a {
+  font-size: 2rem;
+  text-align: center;
+  color: #272727;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  position: relative;
+  transition: all 0.5s;
+}
+@media screen and (min-width: 830px) {
+  body ul li a {
+    margin: 0 2.5rem;
+  }
+}
+body ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: 1.2rem;
+  left: 1.2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-left: 2px solid #cd853f;
+  border-bottom: 2px solid #cd853f;
+  opacity: 0;
+  transition: all 0.2s ease-in;
+}
+body ul li a:hover::before {
+  bottom: -1.2rem;
+  left: -1.2rem;
+  opacity: 1;
+}
+body ul li a::after {
+  content: "";
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-right: 2px solid #cd853f;
+  border-top: 2px solid #cd853f;
+  opacity: 0;
+  transition: all 0.2s ease-in;
+}
+body ul li a:hover::after {
+  top: -1.2rem;
+  right: -1.2rem;
+  opacity: 1;
+}
+body ul li a:hover {
+  background-color: #cd853f;
+  color: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */
