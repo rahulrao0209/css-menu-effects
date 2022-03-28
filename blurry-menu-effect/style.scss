@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
+
+$primary-color: #683704;
+$background-color: #faf9f6;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Dela Gothic One", cursive;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: $background-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ul {
+    display: flex;
+    flex-flow: column nowrap;
+
+    /* When we hover over the ul, make all the a tags blurry and reduce their opacity */
+    &:hover a {
+      filter: blur(2px);
+      opacity: 0.3;
+    }
+
+    @media screen and (min-width: 630px) {
+      flex-flow: row wrap;
+    }
+
+    li {
+      list-style-type: none;
+
+      a {
+        display: block;
+        text-decoration: none;
+        font-size: 2rem;
+        padding: 1rem;
+        margin: 0.5rem 0;
+        text-align: center;
+        color: $primary-color;
+        transition: all 0.5s;
+        position: relative;
+
+        @media screen and (min-width: 630px) {
+          margin: 0 0.5rem;
+        }
+
+        /* When we hover over the a tag remove the blur and opacity for that a tag and scale its size */
+        &:hover {
+          transform: scale(1.3);
+          filter: blur(0);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
