@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: #faf9f6;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body ul {
+  list-style-type: none;
+  display: flex;
+  flex-flow: column nowrap;
+}
+@media screen and (min-width: 830px) {
+  body ul {
+    flex-flow: row wrap;
+  }
+}
+body ul li {
+  /* Styling the four spans to create the four part split effect */
+}
+body ul li a {
+  text-decoration: none;
+  display: block;
+  width: 10rem;
+  height: 4rem;
+  padding: 1rem 0.5rem;
+  margin: 1.5rem 0;
+  font-size: 1.8rem;
+  text-align: center;
+  color: #965a3e;
+  position: relative;
+  transition: all 0.25s;
+  /* Animate the effect as we hover over the link */
+}
+body ul li a:hover {
+  color: #fff;
+}
+body ul li a:hover span {
+  transform: scaleY(1);
+}
+@media screen and (min-width: 830px) {
+  body ul li a {
+    margin: 0 1rem;
+  }
+}
+body ul li span {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #a0785a;
+  z-index: -1;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: all 0.5s;
+}
+body ul li span:nth-child(2) {
+  left: 25%;
+  transition-delay: 0.15s;
+}
+body ul li span:nth-child(3) {
+  left: 50%;
+  transition-delay: 0.3s;
+}
+body ul li span:nth-child(4) {
+  left: 75%;
+  transition-delay: 0.45s;
+}
+
+/*# sourceMappingURL=style.css.map */
