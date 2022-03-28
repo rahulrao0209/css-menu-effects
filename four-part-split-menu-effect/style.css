@@ -20,7 +20,6 @@ body {
   align-items: center;
 }
 body ul {
-  list-style-type: none;
   display: flex;
   flex-flow: column nowrap;
 }
@@ -30,6 +29,7 @@ body ul {
   }
 }
 body ul li {
+  list-style-type: none;
   /* Styling the four spans to create the four part split effect */
 }
 body ul li a {
