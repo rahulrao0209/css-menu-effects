@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=BenchNine:wght@300;400;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "BenchNine", sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #faf9f6;
+}
+body ul {
+  display: flex;
+  flex-flow: column nowrap;
+}
+@media screen and (min-width: 630px) {
+  body ul {
+    flex-flow: row wrap;
+  }
+}
+body ul li {
+  list-style-type: none;
+  padding: 2rem 0;
+  /* Create border for left side half */
+  /* Create border for right side half */
+  /* Increase width from 0 to 50% */
+  /* Shift the left border to the right by 50% and vice-versa */
+}
+@media screen and (min-width: 630px) {
+  body ul li {
+    padding: 0 2rem;
+  }
+}
+body ul li > a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  color: #222;
+  position: relative;
+}
+body ul li > a::before {
+  content: "";
+  position: absolute;
+  bottom: -0.2rem;
+  left: 0;
+  width: 0;
+  height: 0.5rem;
+  background-color: #00bcd4;
+  transition: all 0.4s ease-out;
+}
+body ul li > a::after {
+  content: "";
+  position: absolute;
+  bottom: -0.2rem;
+  right: 0;
+  width: 0;
+  height: 0.5rem;
+  background-color: #e0751e;
+  transition: all 0.4s ease-out;
+}
+body ul li > a:hover::before, body ul li > a:hover::after {
+  width: 50%;
+}
+body ul li > a:hover::before {
+  left: 50%;
+}
+body ul li > a:hover::after {
+  right: 50%;
+}
+
+/*# sourceMappingURL=style.css.map */

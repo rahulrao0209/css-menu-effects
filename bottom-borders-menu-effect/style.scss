@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=BenchNine:wght@300;400;700&display=swap");
+
+$primary-color: #00bcd4;
+$secondary-color: #e0751e;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "BenchNine", sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #faf9f6;
+
+  ul {
+    display: flex;
+    flex-flow: column nowrap;
+
+    @media screen and (min-width: 630px) {
+      flex-flow: row wrap;
+    }
+
+    li {
+      list-style-type: none;
+      padding: 2rem 0;
+
+      @media screen and (min-width: 630px) {
+        padding: 0 2rem;
+      }
+
+      & > a {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 3rem;
+        font-weight: 700;
+        letter-spacing: 0.2rem;
+        color: #222;
+        position: relative;
+      }
+
+      /* Create border for left side half */
+      & > a::before {
+        content: "";
+        position: absolute;
+        bottom: -0.2rem;
+        left: 0;
+        width: 0;
+        height: 0.5rem;
+        background-color: $primary-color;
+        transition: all 0.4s ease-out;
+      }
+
+      /* Create border for right side half */
+      & > a::after {
+        content: "";
+        position: absolute;
+        bottom: -0.2rem;
+        right: 0;
+        width: 0;
+        height: 0.5rem;
+        background-color: $secondary-color;
+        transition: all 0.4s ease-out;
+      }
+
+      /* Increase width from 0 to 50% */
+      & > a:hover::before,
+      & > a:hover::after {
+        width: 50%;
+      }
+
+      /* Shift the left border to the right by 50% and vice-versa */
+      & > a:hover::before {
+        left: 50%;
+      }
+
+      & > a:hover::after {
+        right: 50%;
+      }
+    }
+  }
+}
