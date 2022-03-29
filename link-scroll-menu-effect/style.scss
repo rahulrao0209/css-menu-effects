@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+
+$primary-color: #cd853f;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Bangers", cursive;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff99;
+
+  ul {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    @media screen and (min-width: 640px) {
+      flex-flow: row wrap;
+    }
+
+    li {
+      position: relative;
+      list-style-type: none;
+
+      a {
+        display: block;
+        height: 4rem;
+        width: 12rem;
+        text-decoration: none;
+        font-size: 2.5rem;
+        color: $primary-color;
+        margin: 1rem 0;
+        position: relative;
+        overflow: hidden;
+
+        /* Place the second below the first. It will be invisible because overflow is set as hidden on the a tag above */
+        & > span {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: 0.5s;
+        }
+
+        /* On hover translate both span's along y-axis by 100% to create our effect */
+        &:hover > span {
+          transform: translateY(-100%);
+        }
+
+        /* Add the color slide in effect */
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: $primary-color;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: all 0.5s;
+          transition-delay: 0;
+        }
+
+        &:hover::before {
+          transform: scaleX(100%);
+          transition-delay: 0.2s;
+          transform-origin: left;
+        }
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
