@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body ul {
+  display: flex;
+  flex-flow: column nowrap;
+}
+@media screen and (min-width: 800px) {
+  body ul {
+    flex-flow: row wrap;
+  }
+}
+body ul li {
+  list-style-type: none;
+  margin: 2rem 0;
+}
+@media screen and (min-width: 800px) {
+  body ul li {
+    margin: 0 0.5rem;
+  }
+}
+body ul li a {
+  display: block;
+  text-align: center;
+  position: relative;
+  padding: 1.5rem 3rem;
+  font-size: 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #222;
+  font-weight: 700;
+  transition: 0.5s;
+  /* Create the top and bottom borders for the effect */
+  /* Scale up on y-axis and set opacity to 1 to create the effect */
+  /* Add background color and change color of the a-tag on hover to create the effect */
+}
+body ul li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.5s;
+}
+body ul li a:hover::before {
+  transform: scaleY(1.3);
+  opacity: 1;
+}
+body ul li a:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */
