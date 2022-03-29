@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
 
-$primary-color: #cd853f;
+$background: #292929;
+$primary-color: #59b46e;
 
 *,
 *::before,
@@ -21,8 +22,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff99;
-
+  background-color: $background;
   ul {
     display: flex;
     flex-flow: column nowrap;
