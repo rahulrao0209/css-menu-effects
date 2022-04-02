@@ -12,3 +12,4 @@ A repo for *awesome creative CSS Menu Effects*
 - [Growing Borders Menu Effect](https://codepen.io/rahulr0209/full/xxpLrgW)
 - [Layered Menu Effect](https://codepen.io/rahulr0209/full/dyJzRvQ)
 - [Link Scroll Menu Effect](https://codepen.io/rahulr0209/full/mdpMwmY)
+- [Social Media Icons Menu Effect](https://codepen.io/rahulr0209/full/zYpPwev)
