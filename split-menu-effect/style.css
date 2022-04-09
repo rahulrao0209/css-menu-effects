@@ -1,0 +1,96 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #faf9f6;
+  overflow: hidden;
+}
+body ul {
+  list-style-type: none;
+  display: flex;
+  flex-flow: column nowrap;
+}
+body ul li {
+  margin: 1rem 0;
+  position: relative;
+  overflow: hidden;
+  /* Add the horizontal splitting line using before for li tag */
+}
+body ul li a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  color: transparent;
+  /* Create the split menu effect using before and after selectors for a tag */
+  /* Add effect on hover */
+}
+@media screen and (min-width: 300px) {
+  body ul li a {
+    font-size: 6rem;
+  }
+}
+body ul li a::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  color: #1f1f1f;
+  clip-path: polygon(0 0, 100% 0, 100% 55%, 0 55%);
+  transition: transform 0.5s;
+}
+body ul li a::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  color: #1f1f1f;
+  clip-path: polygon(0 45%, 100% 45%, 100% 100%, 0 100%);
+  transition: transform 0.5s;
+}
+body ul li a:hover::before {
+  color: #340202;
+  transform: translate(0.5rem, -0.5rem);
+}
+body ul li a:hover::after {
+  color: #340202;
+  transform: translate(-0.5rem, 0.5rem);
+}
+body ul li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-49%);
+  width: 100%;
+  height: 0.5px;
+  background-color: #262626;
+  left: -100%;
+  transition: 0.2s;
+}
+body ul li:hover::before {
+  left: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */
